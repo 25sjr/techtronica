@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>TechTronica</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script type="text/javascript">  
+function validateform()
+{  
+x=document.india;
+var reg = new RegExp("[A-Za-z]");
+
+if (x.username.value== 0)
+{  
+  alert("User Name can't be blank");  
+  return false;  
+}
+
+else if (!reg.test(x.username.value)) {
+   alert("Invalid User Name")
+   return false;
+}
+
+else if(x.password.value.length<6)
+{  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+}
+  
+else if (x.repassword.value== 0)
+{  
+  alert("RePassword Blank");  
+  return false;  
+}
+
+else if (x.repassword.value != x.password.value)
+{  
+  alert("PASSWORD Not Matched");  
+  return false;  
+}
+
+}
+
+function confirmshow()
+{
+
+var s=confirm("DO YOU WANT TO CONTINUE");
+
+if(s==true)
+   {
+	 return true;
+   }   
+ else
+ {
+    return false;
+}
+}  
+
+</script> 
+</head>
+<body>  
+<div style="background-image: url(image1.jpg); height: 150px; width: 1360px;">
+	<div id="page">
+		<div id="logo">
+                                                      <br>
+                                                      <img src="techlogo.jpg">
+		</div>
+		<div id="nav">
+ <br><br><br><br>
+			<ul>
+			    <li><a href="main.html"><b>HOME</a></li>
+			    <li><a href="signup_page.html"><b>SIGN UP</a></li>
+
+				<li><a href="contactus.html"><b>CONTACT</a></li>
+				<li><a href="aboutus.html"><b>ABOUT</a></li>
+                <li><a href="help.html"><b>HELP</a></li>
+			</ul>	
+		</div>
+                                  </div>
+								  </div>
+
+ <form name="india" method="post" action="insert.php" onsubmit="return confirmshow()">
+  <div align=center><br><br>
+ <h1><b>LOGIN</b></h1>
+<table>
+        <tr><td>   USER NAME :* </td><td><input type="USER NAME" name="username" /><br></td></tr>
+		<tr><td>   Password:*</td><td> <input type="PASSWORD" name="password" /><br></td></tr>
+	    <tr><td>   Confirm Your Password:*</td><td> <input type="PASSWORD" name="repassword" /><br></td></tr>
+                                                 
+</table>
+<br>
+<div align="center">
+<input type="Submit" value="Continue" onclick="return validateform()" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="reset" value="Reset" />
+</div>
+
+</form>
+ <p>Note: Please make sure your details are correct before submitting form and that all fields marked with * are MANDATORY!!!.</p>
+ </body>
+</html>
